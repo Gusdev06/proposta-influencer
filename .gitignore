@@ -1,0 +1,19 @@
+# Images (hosted on Supabase Storage)
+*.jpg
+*.jpeg
+*.png
+*.ico
+*.avif
+*.webp
+assets/*.jpg
+assets/*.jpeg
+assets/*.png
+assets/*.ico
+assets/*.avif
+assets/*.webp
+
+# Backup
+index.html.bak
+
+# Upload script
+upload-images.sh
