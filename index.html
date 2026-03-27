@@ -958,38 +958,38 @@
             <h4 class="font-display text-xl tracking-wider group-hover:text-[#B8964E] transition-colors">Setup Inicial
             </h4>
             <p id="setup-desc" class="text-[11px] leading-6 opacity-60 font-light text-justify"
-              data-text-1="Investimento único que dá vida à sua influencer. Criamos a persona do zero, com rosto, corpo, voz e estilo próprios. Você paga uma vez e usa para sempre."
-              data-text-2="Investimento único que dá vida às suas duas influencers. É aqui que tudo começa — criamos cada persona do zero, com rosto, corpo, voz e estilo próprios. Você paga uma vez e usa para sempre.">
+              data-t1="Investimento único que dá vida à sua influencer. Criamos a persona do zero, com rosto, corpo, voz e estilo próprios. Você paga uma vez e usa para sempre."
+              data-t2="Investimento único que dá vida às suas duas influencers. É aqui que tudo começa — criamos cada persona do zero, com rosto, corpo, voz e estilo próprios. Você paga uma vez e usa para sempre.">
               Investimento único que dá vida à sua
               influencer. É aqui que tudo começa — criamos a persona do zero, com rosto, corpo, voz e estilo próprios.
               Você paga uma vez e usa para sempre.</p>
             <ul class="space-y-1.5 pt-3 text-[11px] font-light opacity-65 tracking-wide">
-              <li class="flex items-start gap-2 setup-swap" data-text-1="Criação do rosto exclusivo da sua influencer"
-                data-text-2="Criação do rosto exclusivo de cada influencer"><span
+              <li class="flex items-start gap-2 setup-swap" data-t1="Criação do rosto exclusivo da sua influencer"
+                data-t2="Criação do rosto exclusivo de cada influencer"><span
                   class="w-1 h-1 rounded-full bg-[#B8964E] inline-block mt-[6px] flex-shrink-0"></span>Criação do rosto
                 exclusivo da sua influencer</li>
-              <li class="flex items-start gap-2 setup-swap" data-text-1="Definição do corpo, proporções e traços únicos"
-                data-text-2="Definição do corpo, proporções e traços únicos de cada uma"><span
+              <li class="flex items-start gap-2 setup-swap" data-t1="Definição do corpo, proporções e traços únicos"
+                data-t2="Definição do corpo, proporções e traços únicos de cada uma"><span
                   class="w-1 h-1 rounded-full bg-[#B8964E] inline-block mt-[6px] flex-shrink-0"></span>Definição do
                 corpo, proporções e traços únicos</li>
               <li class="flex items-start gap-2 setup-swap"
-                data-text-1="30 imagens base em diversos ângulos e ambientes para garantir consistência visual"
-                data-text-2="60 imagens base em diversos ângulos e ambientes para garantir consistência visual"><span
+                data-t1="30 imagens base em diversos ângulos e ambientes para garantir consistência visual"
+                data-t2="60 imagens base em diversos ângulos e ambientes para garantir consistência visual"><span
                   class="w-1 h-1 rounded-full bg-[#B8964E] inline-block mt-[6px] flex-shrink-0"></span>30 imagens base
                 em diversos ângulos e ambientes para garantir consistência visual</li>
               <li class="flex items-start gap-2 setup-swap"
-                data-text-1="Criação da voz e do tom de comunicação da persona"
-                data-text-2="Criação da voz e do tom de comunicação de cada persona"><span
+                data-t1="Criação da voz e do tom de comunicação da persona"
+                data-t2="Criação da voz e do tom de comunicação de cada persona"><span
                   class="w-1 h-1 rounded-full bg-[#B8964E] inline-block mt-[6px] flex-shrink-0"></span>Criação da voz e
                 do tom de comunicação da persona</li>
               <li class="flex items-start gap-2 setup-swap"
-                data-text-1="Identidade visual completa (paleta, estilo, posicionamento)"
-                data-text-2="Identidade visual completa de cada influencer (paleta, estilo, posicionamento)"><span
+                data-t1="Identidade visual completa (paleta, estilo, posicionamento)"
+                data-t2="Identidade visual completa de cada influencer (paleta, estilo, posicionamento)"><span
                   class="w-1 h-1 rounded-full bg-[#B8964E] inline-block mt-[6px] flex-shrink-0"></span>Identidade visual
                 completa (paleta, estilo, posicionamento)</li>
               <li class="flex items-start gap-2 setup-swap"
-                data-text-1="Treinamento do modelo de IA para que todas as futuras imagens e vídeos sejam fiéis à persona criada"
-                data-text-2="Treinamento dos modelos de IA para que todas as futuras imagens e vídeos sejam fiéis às personas criadas">
+                data-t1="Treinamento do modelo de IA para que todas as futuras imagens e vídeos sejam fiéis à persona criada"
+                data-t2="Treinamento dos modelos de IA para que todas as futuras imagens e vídeos sejam fiéis às personas criadas">
                 <span class="w-1 h-1 rounded-full bg-[#B8964E] inline-block mt-[6px] flex-shrink-0"></span>Treinamento
                 do
                 modelo de IA para que todas as futuras imagens e vídeos sejam fiéis à persona criada
@@ -1257,10 +1257,10 @@
 
       // Swap setup texts
       var setupDesc = document.getElementById('setup-desc');
-      if (setupDesc) setupDesc.textContent = mode === 1 ? setupDesc.dataset.text1 : setupDesc.dataset.text2;
+      if (setupDesc) setupDesc.textContent = mode === 1 ? setupDesc.dataset.t1 : setupDesc.dataset.t2;
       document.querySelectorAll('.setup-swap').forEach(function (li) {
         var bullet = li.querySelector('span');
-        var text = mode === 1 ? li.dataset.text1 : li.dataset.text2;
+        var text = mode === 1 ? li.dataset.t1 : li.dataset.t2;
         li.textContent = '';
         li.appendChild(bullet);
         li.append(text);
