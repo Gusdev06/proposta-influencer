@@ -423,6 +423,7 @@
       color: #F5F1EB;
     }
 
+    .price-3.hidden,
     .price-2.hidden,
     .price-1.hidden {
       display: none;
@@ -455,12 +456,14 @@
 
     /* Price swap animation */
     .price-1,
-    .price-2 {
+    .price-2,
+    .price-3 {
       transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .price-1:not(.hidden),
-    .price-2:not(.hidden) {
+    .price-2:not(.hidden),
+    .price-3:not(.hidden) {
       animation: priceIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
@@ -753,21 +756,25 @@
           Soluções sob medida para cada necessidade
         </p>
       </div>
-      <!-- Toggle 1 vs 2 Influencers -->
-      <div class="flex justify-center mb-24">
+      <!-- Toggle 1 / 2 / 3 Influencers -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24">
         <div class="inline-flex items-center bg-[#1A1A1A]/5 rounded-full p-1 relative">
           <button id="toggle-1" onclick="togglePlans(1)"
-            class="plan-toggle active relative z-10 text-[10px] tracking-[0.2em] uppercase px-6 py-2.5 rounded-full transition-all duration-300 font-medium">
+            class="plan-toggle active relative z-10 text-[10px] tracking-[0.2em] uppercase px-5 py-2.5 rounded-full transition-all duration-300 font-medium">
             1 Influencer
           </button>
           <button id="toggle-2" onclick="togglePlans(2)"
-            class="plan-toggle relative z-10 text-[10px] tracking-[0.2em] uppercase px-6 py-2.5 rounded-full transition-all duration-300 font-medium">
+            class="plan-toggle relative z-10 text-[10px] tracking-[0.2em] uppercase px-5 py-2.5 rounded-full transition-all duration-300 font-medium">
             2 Influencers
+          </button>
+          <button id="toggle-3" onclick="togglePlans(3)"
+            class="plan-toggle relative z-10 text-[10px] tracking-[0.2em] uppercase px-5 py-2.5 rounded-full transition-all duration-300 font-medium">
+            3 Influencers
           </button>
         </div>
         <div id="savings-badge"
-          class="hidden ml-4 inline-flex items-center gap-2 border border-[#B8964E]/30 rounded-full px-4 py-2 animate-[fadeIn_0.3s_ease-out]">
-          <span class="text-[9px] tracking-[0.15em] uppercase text-[#B8964E] font-medium">Economize até R$ 5.750</span>
+          class="hidden inline-flex items-center gap-2 border border-[#B8964E]/30 rounded-full px-4 py-2 animate-[fadeIn_0.3s_ease-out]">
+          <span id="savings-text" class="text-[9px] tracking-[0.15em] uppercase text-[#B8964E] font-medium">Economize até R$ 5.750</span>
         </div>
       </div>
       <!-- Featured: Crepe -->
@@ -824,6 +831,27 @@
             <p class="text-sm font-display tracking-wide mt-1 text-[#B8964E]">R$ 4.500<span
                 class="text-xs opacity-60">/mês · meses seguintes</span></p>
             <p class="text-[10px] opacity-40 mt-1 font-light">2 influencers · Inclui 2 setups iniciais completos</p>
+          </div>
+          <!-- Pricing: 3 influencers -->
+          <div class="price-3 hidden transition-all duration-300">
+            <div class="flex items-center gap-3 mt-4">
+              <span class="text-sm line-through opacity-30 font-display">R$ 14.250</span>
+              <span
+                class="text-[9px] tracking-wide uppercase bg-[#B8964E]/10 text-[#B8964E] px-2.5 py-1 rounded-full">-R$
+                2.800</span>
+            </div>
+            <p class="text-lg font-display tracking-wide mt-1 text-[#B8964E]">R$ 11.450<span class="text-xs opacity-60">
+                no 1º mês</span></p>
+            <div class="flex items-center gap-2 mt-2">
+              <span class="text-xs line-through opacity-30 font-display">R$ 6.750</span>
+              <span
+                class="text-[9px] tracking-wide uppercase bg-[#B8964E]/10 text-[#B8964E] px-2 py-0.5 rounded-full">-R$
+                550/mês</span>
+            </div>
+            <p class="text-sm font-display tracking-wide mt-1 text-[#B8964E]">R$ 6.200<span
+                class="text-xs opacity-60">/mês · meses seguintes</span></p>
+            <p class="text-[10px] opacity-40 mt-1 font-light">3 influencers · Ganha 1 setup brinde + desconto na
+              mensalidade</p>
           </div>
           <div class="pt-4">
             <button
@@ -888,6 +916,13 @@
               <p class="text-xs font-display tracking-wide mt-1 text-[#B8964E]">R$ 6.500<span
                   class="text-[10px] opacity-60">/mês · meses seguintes</span></p>
             </div>
+            <!-- Pricing: 3 influencers -->
+            <div class="price-3 hidden transition-all duration-300">
+              <p class="text-sm font-display tracking-wide mt-2 text-[#B8964E]">Sob consulta</p>
+              <a href="https://wa.me/5511942054868?text=Ol%C3%A1%20Geovani%2C%20gostaria%20de%20uma%20proposta%20de%20Cria%C3%A7%C3%A3o%20%2B%20Estrat%C3%A9gia%20para%203%20influencers."
+                target="_blank"
+                class="text-[10px] opacity-60 underline hover:opacity-100 transition-opacity">Solicitar proposta →</a>
+            </div>
           </div>
         </article>
         <!-- Item 2 -->
@@ -947,6 +982,13 @@
               <p class="text-xs font-display tracking-wide mt-1 text-[#B8964E]">R$ 9.250<span
                   class="text-[10px] opacity-60">/mês · meses seguintes</span></p>
             </div>
+            <!-- Pricing: 3 influencers -->
+            <div class="price-3 hidden transition-all duration-300">
+              <p class="text-sm font-display tracking-wide mt-2 text-[#B8964E]">Sob consulta</p>
+              <a href="https://wa.me/5511942054868?text=Ol%C3%A1%20Geovani%2C%20gostaria%20de%20uma%20proposta%20de%20Gest%C3%A3o%20Total%20para%203%20influencers."
+                target="_blank"
+                class="text-[10px] opacity-60 underline hover:opacity-100 transition-opacity">Solicitar proposta →</a>
+            </div>
           </div>
         </article>
         <!-- Item 3 -->
@@ -965,36 +1007,43 @@
             </h4>
             <p id="setup-desc" class="text-[11px] leading-6 opacity-60 font-light text-justify"
               data-t1="Investimento único que dá vida à sua influencer. Criamos a persona do zero, com rosto, corpo, voz e estilo próprios. Você paga uma vez e usa para sempre."
-              data-t2="Investimento único que dá vida às suas duas influencers. Criamos cada persona do zero, com rosto, corpo, voz e estilo próprios. Você paga uma vez e usa para sempre.">
+              data-t2="Investimento único que dá vida às suas duas influencers. Criamos cada persona do zero, com rosto, corpo, voz e estilo próprios. Você paga uma vez e usa para sempre."
+              data-t3="Investimento único que dá vida às suas três influencers. Criamos cada persona do zero, com rosto, corpo, voz e estilo próprios. Você paga uma vez e usa para sempre.">
               Investimento único que dá vida à sua
               influencer. Criamos a persona do zero, com rosto, corpo, voz e estilo próprios.
               Você paga uma vez e usa para sempre.</p>
             <ul class="space-y-1.5 pt-3 text-[11px] font-light opacity-65 tracking-wide">
               <li class="flex items-start gap-2 setup-swap" data-t1="Criação do rosto exclusivo da sua influencer"
-                data-t2="Criação do rosto exclusivo de cada influencer"><span
+                data-t2="Criação do rosto exclusivo de cada influencer"
+                data-t3="Criação do rosto exclusivo de cada uma das três influencers"><span
                   class="w-1 h-1 rounded-full bg-[#B8964E] inline-block mt-[6px] flex-shrink-0"></span>Criação do rosto
                 exclusivo da sua influencer</li>
               <li class="flex items-start gap-2 setup-swap" data-t1="Definição do corpo, proporções e traços únicos"
-                data-t2="Definição do corpo, proporções e traços únicos de cada uma"><span
+                data-t2="Definição do corpo, proporções e traços únicos de cada uma"
+                data-t3="Definição do corpo, proporções e traços únicos de cada uma das três"><span
                   class="w-1 h-1 rounded-full bg-[#B8964E] inline-block mt-[6px] flex-shrink-0"></span>Definição do
                 corpo, proporções e traços únicos</li>
               <li class="flex items-start gap-2 setup-swap"
                 data-t1="30 imagens base em diversos ângulos e ambientes para garantir consistência visual"
-                data-t2="60 imagens base em diversos ângulos e ambientes para garantir consistência visual"><span
+                data-t2="60 imagens base em diversos ângulos e ambientes para garantir consistência visual"
+                data-t3="90 imagens base em diversos ângulos e ambientes para garantir consistência visual"><span
                   class="w-1 h-1 rounded-full bg-[#B8964E] inline-block mt-[6px] flex-shrink-0"></span>30 imagens base
                 em diversos ângulos e ambientes para garantir consistência visual</li>
               <li class="flex items-start gap-2 setup-swap" data-t1="Criação da voz e do tom de comunicação da persona"
-                data-t2="Criação da voz e do tom de comunicação de cada persona"><span
+                data-t2="Criação da voz e do tom de comunicação de cada persona"
+                data-t3="Criação da voz e do tom de comunicação de cada uma das três personas"><span
                   class="w-1 h-1 rounded-full bg-[#B8964E] inline-block mt-[6px] flex-shrink-0"></span>Criação da voz e
                 do tom de comunicação da persona</li>
               <li class="flex items-start gap-2 setup-swap"
                 data-t1="Identidade visual completa (paleta, estilo, posicionamento)"
-                data-t2="Identidade visual completa de cada influencer (paleta, estilo, posicionamento)"><span
+                data-t2="Identidade visual completa de cada influencer (paleta, estilo, posicionamento)"
+                data-t3="Identidade visual completa de cada uma das três influencers (paleta, estilo, posicionamento)"><span
                   class="w-1 h-1 rounded-full bg-[#B8964E] inline-block mt-[6px] flex-shrink-0"></span>Identidade visual
                 completa (paleta, estilo, posicionamento)</li>
               <li class="flex items-start gap-2 setup-swap"
                 data-t1="Treinamento do modelo de IA para que todas as futuras imagens e vídeos sejam fiéis à persona criada"
-                data-t2="Treinamento dos modelos de IA para que todas as futuras imagens e vídeos sejam fiéis às personas criadas">
+                data-t2="Treinamento dos modelos de IA para que todas as futuras imagens e vídeos sejam fiéis às personas criadas"
+                data-t3="Treinamento dos três modelos de IA para que todas as futuras imagens e vídeos sejam fiéis às personas criadas">
                 <span class="w-1 h-1 rounded-full bg-[#B8964E] inline-block mt-[6px] flex-shrink-0"></span>Treinamento
                 do
                 modelo de IA para que todas as futuras imagens e vídeos sejam fiéis à persona criada
@@ -1014,6 +1063,12 @@
                 Total
               </p>
             </div>
+            <!-- Pricing: 3 influencers -->
+            <div class="price-3 hidden transition-all duration-300">
+              <p class="text-sm font-display tracking-wide mt-2 text-[#B8964E]">R$ 2.500 <span
+                  class="text-[10px] opacity-60">· por influencer</span></p>
+              <p class="text-[10px] opacity-40 mt-1 font-light">1 setup brinde no combo 3x Criação</p>
+            </div>
           </div>
         </article>
       </div>
@@ -1028,9 +1083,9 @@
     </div>
     <!-- Comparativo lado a lado -->
     <div class="max-w-6xl mx-auto px-6 mb-20">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-[2px] overflow-hidden shadow-2xl shadow-black/20">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-[2px] overflow-hidden shadow-2xl shadow-black/20">
         <!-- Coluna 1: 1 Influencer -->
-        <div class="bg-[#EDE9E3] p-10 md:p-14">
+        <div class="bg-[#EDE9E3] p-8 md:p-10">
           <div class="flex items-center gap-3 mb-10">
             <span
               class="w-8 h-8 rounded-full bg-[#1A1A1A] text-[#F5F1EB] flex items-center justify-center text-[11px] font-medium">1</span>
@@ -1081,10 +1136,10 @@
           </div>
         </div>
         <!-- Coluna 2: 2 Influencers -->
-        <div class="bg-[#1A1A1A] text-[#F5F1EB] p-10 md:p-14 relative">
+        <div class="bg-[#1A1A1A] text-[#F5F1EB] p-8 md:p-10 relative flex flex-col">
           <div
             class="absolute top-0 right-0 bg-[#B8964E] text-[#1A1A1A] text-[8px] tracking-[0.15em] uppercase font-semibold px-4 py-1.5 rounded-bl-lg">
-            Melhor custo-benefício</div>
+            Popular</div>
           <div class="flex items-center gap-3 mb-10">
             <span
               class="w-8 h-8 rounded-full bg-[#B8964E] text-[#1A1A1A] flex items-center justify-center text-[11px] font-medium">2</span>
@@ -1148,9 +1203,70 @@
             </div>
           </div>
           <!-- Savings callout -->
-          <div class="mt-8 border border-[#B8964E]/20 rounded-[2px] px-4 py-3 text-center">
-            <p class="text-[10px] tracking-[0.15em] uppercase text-[#B8964E]/80">Economize até R$ 5.750 com 2
-              influencers</p>
+          <div class="mt-auto pt-8 border-[#B8964E]/20 rounded-[2px] text-center">
+            <div class="border border-[#B8964E]/20 rounded-[2px] px-4 py-3">
+              <p class="text-[10px] tracking-[0.15em] uppercase text-[#B8964E]/80">Economize até R$ 5.750 com 2
+                influencers</p>
+            </div>
+          </div>
+        </div>
+        <!-- Coluna 3: 3 Influencers -->
+        <div class="bg-gradient-to-br from-[#B8964E] to-[#7a6234] text-[#F5F1EB] p-8 md:p-10 relative flex flex-col">
+          <div
+            class="absolute top-0 right-0 bg-[#1A1A1A] text-[#F5F1EB] text-[8px] tracking-[0.15em] uppercase font-semibold px-4 py-1.5 rounded-bl-lg">
+            Melhor custo-benefício</div>
+          <div class="flex items-center gap-3 mb-10">
+            <span
+              class="w-8 h-8 rounded-full bg-[#F5F1EB] text-[#1A1A1A] flex items-center justify-center text-[11px] font-medium">3</span>
+            <h4 class="font-display text-2xl tracking-wide">3 Influencers</h4>
+          </div>
+          <div class="space-y-0 font-serif text-sm tracking-wide">
+            <!-- Combo 1 -->
+            <div class="flex justify-between items-center py-4 border-b border-white/15">
+              <div>
+                <span class="block text-[10px] tracking-[0.15em] uppercase opacity-60 mb-1">3x Criação</span>
+                <span class="font-light opacity-90">Inclui 3 setups · 1 de brinde</span>
+              </div>
+              <div class="text-right">
+                <span class="text-[11px] line-through opacity-50 font-display block">R$ 14.250</span>
+                <div>
+                  <span class="font-display text-base">R$ 11.450</span>
+                  <span class="text-[10px] opacity-70"> 1º mês</span>
+                </div>
+                <div class="mt-1">
+                  <span class="text-[10px] line-through opacity-50 font-display">R$ 6.750</span>
+                  <span class="font-display text-sm ml-1">R$ 6.200</span>
+                  <span class="text-[10px] opacity-70">/mês subsequente</span>
+                </div>
+              </div>
+            </div>
+            <!-- Combo 2 -->
+            <div class="flex justify-between items-center py-4 border-b border-white/15">
+              <div>
+                <span class="block text-[10px] tracking-[0.15em] uppercase opacity-60 mb-1">3x Criação +
+                  Estratégia</span>
+                <span class="font-light opacity-90">Proposta personalizada</span>
+              </div>
+              <div class="text-right">
+                <span class="font-display text-sm">Sob consulta</span>
+              </div>
+            </div>
+            <!-- Combo 3 -->
+            <div class="flex justify-between items-center py-4">
+              <div>
+                <span class="block text-[10px] tracking-[0.15em] uppercase opacity-60 mb-1">3x Gestão Total</span>
+                <span class="font-light opacity-90">Proposta personalizada</span>
+              </div>
+              <div class="text-right">
+                <span class="font-display text-sm">Sob consulta</span>
+              </div>
+            </div>
+          </div>
+          <!-- Savings callout -->
+          <div class="mt-auto pt-8 text-center">
+            <div class="border border-[#F5F1EB]/30 rounded-[2px] px-4 py-3">
+              <p class="text-[10px] tracking-[0.15em] uppercase">Desconto de R$ 2.800,00 no 1º mês + R$ 550,00/mês</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1231,55 +1347,66 @@
       currentMode = mode;
       var btn1 = document.getElementById('toggle-1');
       var btn2 = document.getElementById('toggle-2');
+      var btn3 = document.getElementById('toggle-3');
       var badge = document.getElementById('savings-badge');
+      var savingsText = document.getElementById('savings-text');
       var price1 = document.querySelectorAll('.price-1');
       var price2 = document.querySelectorAll('.price-2');
+      var price3 = document.querySelectorAll('.price-3');
+
       // Toggle buttons
+      [btn1, btn2, btn3].forEach(function (b) { if (b) b.classList.remove('active'); });
+      if (mode === 1 && btn1) btn1.classList.add('active');
+      else if (mode === 2 && btn2) btn2.classList.add('active');
+      else if (mode === 3 && btn3) btn3.classList.add('active');
+
+      // Savings badge
       if (mode === 1) {
-        btn1.classList.add('active');
-        btn2.classList.remove('active');
         badge.classList.add('hidden');
       } else {
-        btn2.classList.add('active');
-        btn1.classList.remove('active');
         badge.classList.remove('hidden');
+        if (savingsText) {
+          savingsText.textContent = mode === 2
+            ? 'Economize até R$ 5.750'
+            : 'Desconto de R$ 2.800,00 no 1º mês + R$ 550,00/mês';
+        }
       }
 
-      // Animate prices out then in
-      var hideEls = mode === 1 ? price2 : price1;
-      var showEls = mode === 1 ? price1 : price2;
-      hideEls.forEach(function (el) { el.classList.add('hidden'); });
-      showEls.forEach(function (el) { el.classList.remove('hidden'); });
+      // Show/hide pricing blocks
+      price1.forEach(function (el) { el.classList.toggle('hidden', mode !== 1); });
+      price2.forEach(function (el) { el.classList.toggle('hidden', mode !== 2); });
+      price3.forEach(function (el) { el.classList.toggle('hidden', mode !== 3); });
 
-      // Toggle 2x badges on deliverables
+      // Toggle multiplier badges on deliverables
       var planSection = document.getElementById('planos');
       var items = planSection.querySelectorAll('.qty-item');
       items.forEach(function (li) {
-        var existing = li.querySelector('.qty-2x');
-        if (mode === 2) {
-          if (!existing) {
-            var badge = document.createElement('span');
-            badge.className = 'qty-2x text-[#B8964E] font-semibold ml-1';
-            badge.textContent = '· 2x';
-            li.appendChild(badge);
-          }
-        } else {
-          if (existing) existing.remove();
+        var existing = li.querySelector('.qty-mult');
+        if (existing) existing.remove();
+        if (mode > 1) {
+          var multBadge = document.createElement('span');
+          multBadge.className = 'qty-mult text-[#B8964E] font-semibold ml-1';
+          multBadge.textContent = '· ' + mode + 'x';
+          li.appendChild(multBadge);
         }
       });
 
       // Swap setup texts
       var setupDesc = document.getElementById('setup-desc');
-      if (setupDesc) setupDesc.textContent = mode === 1 ? setupDesc.dataset.t1 : setupDesc.dataset.t2;
+      if (setupDesc) {
+        var descKey = 't' + mode;
+        setupDesc.textContent = setupDesc.dataset[descKey] || setupDesc.dataset.t1;
+      }
       document.querySelectorAll('.setup-swap').forEach(function (li) {
         var bullet = li.querySelector('span');
-        var text = mode === 1 ? li.dataset.t1 : li.dataset.t2;
+        var key = 't' + mode;
+        var text = li.dataset[key] || li.dataset.t1;
         li.textContent = '';
         li.appendChild(bullet);
         li.append(text);
       });
 
-      // Crossfade images
+      // Crossfade images (usa img-1 para modo 1, img-2 para modos 2 e 3)
       var imgs1 = document.querySelectorAll('.plan-img-1');
       var imgs2 = document.querySelectorAll('.plan-img-2');
       if (mode === 1) {
